@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+        <link rel="stylesheet" type="text/css" href="test.css">
+
+	</head>
+	<body>
+    
+    <h1>Help Room</h1>
+    <p> Have some spare time? Want to help someone learn to program? Pick a question you are interested in answering and put it into the Help Room Eclipse plugin and you will be matched up with that person, where you can chat together and code together</p>
+    <p id="hi">Loading...</p>
+		<script>
+			var myDataRef = new Firebase('https://boiling-fire-5079.firebaseio.com/');
+			myDataRef.on('value', function(snapshot){
+				var table = snapshot.val();
+				var i;
+				var s = '<table width="60%" align="center"><tr><td><h3>Question</h3></td><td><h3>ID</h3></td></tr>'
+				var obj = Object.keys(table);
+				for (i in obj){
+					//s += obj[i]+'\n<br>';
+					//var obj2 = Object.keys(table[i]);
+					if(table[obj[i]]['full'] != undefined)
+					s+= '<tr><td>' + table[obj[i]]['question'] + '</td><td>' +  obj[i] +'</td> </tr>\n';
+				}
+				document.getElementById('hi').innerHTML = s+'</table>';
+			});
+            </script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#7FE5FF;
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size:30;
+	text-align:center;
+}
+
+.center {
+     margin-left: auto;
+     margin-right: auto;
+     width: 70%;
+     background-color: #b0e0e6;
+ }
+table {
+	font-size:30;
+}
+
+td{
+	padding:10px;
+}
